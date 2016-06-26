@@ -1,9 +1,14 @@
 <div class="band-detail-container">
-    <h1>{{$resolve.data.name}}</h1>
+    <h1>{{$resolve.band.name}}</h1>
 
     <h2>Artists</h2>
     <!--  -->
     <!-- ARTISTS LIST -->
+    <ul>
+        <li ng-repeat="artist in $resolve.artists">
+            {{artist.firstName}}
+        </li>
+    </ul>
     <!--  -->
     <hr />
 
@@ -11,6 +16,11 @@
     <h2>Albums</h2>
     <!--  -->
     <!-- ALBUNS LIST -->
+    <ul>
+        <li ng-repeat="album in $resolve.albums">
+           <a href="./album/{{album.id}}">{{album.name}}</a>
+        </li>
+    </ul>
     <!--  -->
     <hr />
 
@@ -19,6 +29,11 @@
         <h2>Tracks in {{ album }}</h2>
         <!--  -->
         <!-- TRACKS TABLE -->
+        <ul>
+            <li ng-repeat="track in $resolve.tracks">
+                {{track.name}}
+            </li>
+        </ul>
         <!--  -->
         <hr />
         <!--  -->

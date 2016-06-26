@@ -1,3 +1,4 @@
+<input type="text" ng-model="bandName" name="bandName">
 <table>
     <thead>
         <tr>
@@ -7,7 +8,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in $ctrl.data track by item.id">
+        <tr ng-repeat="item in $ctrl.data | filter:bandName; track by item.id">
             <td ng-repeat="column in $ctrl.columns track by $index">
                 <a ng-if="$index === 0"
                     href="./{{$ctrl.type}}/{{item.id}}/">{{item[column[0]]}}</a>
