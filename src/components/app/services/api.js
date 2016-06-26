@@ -2,6 +2,7 @@ import {bands} from './mock-data';
 import {artists} from './mock-data';
 import {albums} from './mock-data';
 import {tracks} from './mock-data';
+import {comments} from './mock-data';
 
 
 export class ApiService {
@@ -26,23 +27,23 @@ export class ApiService {
     		return response.band
     	});*/
     	return new Promise(resolve => resolve(bands[bandId]));
-    }
+    };
 
-    getArtists(){
+    getArtists(bandId){
         /*return this.http.get(url + '/band/' + bandId + '/artist/all').then(
             function(response){
                 return response.artists
         });*/
         return new Promise(resolve => resolve(artists));
-    }
+    };
 
-    getAlbums(){
+    getAlbums(bandId){
         /*return this.http.get(url + '/band/' + bandId + '/album/all').then(
             function(response){
                 return response.albums
         });*/
         return new Promise(resolve => resolve(albums));
-    }
+    };
 
     getTracks(bandId, albumId){
         /*return this.http.get(url + '/band/' + bandId + '/album/' + albumId + '/tracks/all').then(
@@ -50,5 +51,13 @@ export class ApiService {
                 return response.tracks
         });*/
         return new Promise(resolve => resolve(tracks));
+    };
+
+    getComments(bandId, albumId, trackId){
+        /*return this.http.get(url + '/band/' + bandId + '/album/' + albumId + '/tracks/' + trackId).then(
+            function(response){
+                return response.comments
+        });*/
+        return new Promise(resolve => resolve(comments));
     }
 }

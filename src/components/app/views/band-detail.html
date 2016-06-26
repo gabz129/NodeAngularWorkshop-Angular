@@ -31,13 +31,18 @@
         <!-- TRACKS TABLE -->
         <ul>
             <li ng-repeat="track in $resolve.tracks">
-                {{track.name}}
+                <a href="./track/{{track.id}}">{{track.name}}</a>
             </li>
         </ul>
         <!--  -->
         <hr />
         <!--  -->
         <!-- COMMENTS AREA -->
+        <ul>
+            <li ng-repeat="comment in $resolve.comments">
+                {{comment.description}}
+            </li>
+        </ul>
         <!--  -->
     </div>
 </div>

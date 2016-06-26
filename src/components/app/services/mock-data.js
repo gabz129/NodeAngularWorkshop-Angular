@@ -67,3 +67,8 @@ export const tracks = [{
     trackNumber: 1,
     commentsCount: 3
 }];
+
+export const comments = [{
+    id: "1",
+    description: "comment test"
+}];

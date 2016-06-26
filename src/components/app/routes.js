@@ -28,8 +28,8 @@ export function routes($routeProvider, $locationProvider) {
                 //band: () => new Promise(resolve => resolve(bands[0])),
                 //band: (ApiService) => ApiService.getBand($routeParams.bandId),
                 band: (ApiService) => ApiService.getBand(0),
-                artists: (ApiService) => ApiService.getArtists(),
-                albums: (ApiService) => ApiService.getAlbums(),
+                artists: (ApiService) => ApiService.getArtists(0),
+                albums: (ApiService) => ApiService.getAlbums(0),
             },
         })
         .when('/band/:bandId/album/:albumId/', {
@@ -37,8 +37,8 @@ export function routes($routeProvider, $locationProvider) {
             resolve: {
                 // use resolve to to pass data to the template under $resolve
                 band: (ApiService) => ApiService.getBand(0),
-                artists: (ApiService) => ApiService.getArtists(),
-                albums: (ApiService) => ApiService.getAlbums(),
+                artists: (ApiService) => ApiService.getArtists(0),
+                albums: (ApiService) => ApiService.getAlbums(0),
                 tracks: (ApiService) => ApiService.getTracks(0, 0),
             },
         })
@@ -46,6 +46,11 @@ export function routes($routeProvider, $locationProvider) {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
                 // use resolve to to pass data to the template under $resolve
+                band: (ApiService) => ApiService.getBand(0),
+                artists: (ApiService) => ApiService.getArtists(0),
+                albums: (ApiService) => ApiService.getAlbums(0),
+                tracks: (ApiService) => ApiService.getTracks(0, 0),
+                comments: (ApiService) => ApiService.getComments(0, 0, 0),
             },
         });
 }
